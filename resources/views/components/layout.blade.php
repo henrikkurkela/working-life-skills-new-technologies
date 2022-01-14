@@ -9,11 +9,26 @@
 </head>
 
 <body class='bg-slate-900'>
-    <div class='flex flex-col items-center w-full mt-16'>
-        <div class='bg-slate-500 p-4 shadow-xl rounded'>
-            {{ $slot }}
+    <nav class='bg-slate-700'>
+        <div class='container flex flex-row flex-wrap justify-between items-center mx-auto'>
+            <p class='text-2xl text-center text-slate-500'>Tailwind CSS App</p>
+            @if(Auth::check())
+            <form method='POST' action='/logout'>
+                {{ csrf_field() }}
+                <button
+                    class='bg-teal-500 hover:bg-teal-700 text-slate-900 rounded px-4 py-1 my-1 w-fit-content font-semibold text-lg'
+                    type='submit'>Logout</button>
+            </form>
+            @else
+            <form method='GET' action='/login'>
+                <button
+                    class='bg-teal-500 hover:bg-teal-700 text-slate-900 rounded px-4 py-1 my-1 w-fit-content font-semibold text-lg'
+                    type='submit'>Login</button>
+            </form>
+            @endif
         </div>
-    </div>
+    </nav>
+    {{ $slot }}
 </body>
 
 </html>
