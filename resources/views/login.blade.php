@@ -9,21 +9,9 @@
                 <p class='text-3xl font-bold text-center text-slate-900'>Login</p>
                 <x-error-message />
                 {{ csrf_field() }}
-                <div>
-                    <label class='text-slate-900' for='email'>Email address</label><br />
-                    <input class='w-full h-auto bg-slate-300 p-1 border rounded' type='text' name='email'
-                        autocomplete='email' /><br />
-                </div>
-                <div>
-                    <label class='text-slate-900' for='password'>Password</label><br />
-                    <input class='w-full h-auto bg-slate-300 p-1 border rounded' type='password' name='password'
-                        autocomplete='password' /><br />
-                </div>
-                <div class='flex flex-row justify-center'>
-                    <button
-                        class='bg-teal-500 hover:bg-teal-700 text-slate-900 rounded px-4 py-2 my-4 w-full font-semibold text-lg'
-                        type='submit'>Login</button>
-                </div>
+                <x-input type='text' label='Email address' name='email' autocomplete='email' />
+                <x-input type='password' label='Password' name='password' autocomplete='password' />
+                <x-button type='submit' text='Login' color='teal' />
             </form>
             <div class='flex flex-row items-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 m-1" fill="none" viewBox="0 0 24 24"
