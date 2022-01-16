@@ -12,7 +12,7 @@
                 <x-input type='text' label='Name' name='name' autocomplete='name' />
                 <x-input type='text' label='Email address' name='email' autocomplete='email' />
                 <x-input type='password' label='Password' name='password' autocomplete='password' />
-                <x-button type='submit' text='Register' color='teal' />
+                <x-button type='submit' color='teal' class='w-full'>Register</x-button>
             </form>
             <div class='flex flex-row items-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 m-1" fill="none" viewBox="0 0 24 24"

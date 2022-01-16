@@ -9,7 +9,7 @@
         </p>
         <form method='POST' action='/logout'>
             {{ csrf_field() }}
-            <x-button type='submit' text='Logout' color='red' />
+            <x-button type='submit' color='red'>Logout</x-button>
         </form>
     </div>
 </x-layout>

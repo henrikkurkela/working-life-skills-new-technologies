@@ -4,15 +4,11 @@
         @if(Auth::check())
         <form method='POST' action='/logout'>
             {{ csrf_field() }}
-            <button
-                class='border border-red-500 text-red-500 hover:bg-red-500 hover:text-slate-300 rounded px-4 py-1 my-1 w-fit-content font-semibold text-lg'
-                type='submit'>Logout</button>
+            <x-button type='submit' color='outline-red' class='my-1'>Logout</x-button>
         </form>
         @else
         <form method='GET' action='/login'>
-            <button
-                class='border border-teal-700 text-teal-700 hover:bg-teal-700 hover:text-slate-300 rounded px-4 py-1 my-1 w-fit-content font-semibold text-lg'
-                type='submit'>Login</button>
+            <x-button type='submit' color='outline-teal' class='my-1'>Login</x-button>
         </form>
         @endif
     </div>
