@@ -1,5 +1,5 @@
 @if(session('error') || $errors->any())
-<div class='bg-red-300 rounded p-4 my-1'>
+<div class='bg-red-300 rounded p-4'>
     <p class='text-xl font-bold text-red-900'>Whoops!</p>
     @if(session('error'))
     <p class='text-red-900'>{{ session('error') }}</p>

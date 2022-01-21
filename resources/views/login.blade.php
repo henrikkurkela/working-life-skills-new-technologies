@@ -6,12 +6,14 @@
     <div class='bg-slate-500 p-4 shadow-xl rounded flex flex-col items-center w-fit flex-wrap mt-16 mx-auto'>
         <div class='divide-y divide-slate-900'>
             <form class='w-96' method='POST' action='/login'>
-                <p class='text-3xl font-bold text-center text-slate-900'>Login</p>
-                <x-error-message />
-                {{ csrf_field() }}
-                <x-input type='text' label='Email address' name='email' autocomplete='email' />
-                <x-input type='password' label='Password' name='password' autocomplete='password' />
-                <x-button type='submit' color='teal' class='w-full'>Login</x-button>
+                <div class='flex flex-col gap-4 mb-4'>
+                    <p class='text-3xl font-bold text-center text-slate-900'>Login</p>
+                    <x-error-message />
+                    {{ csrf_field() }}
+                    <x-input type='text' label='Email address' name='email' autocomplete='email' />
+                    <x-input type='password' label='Password' name='password' autocomplete='password' />
+                    <x-button type='submit' color='teal' class='w-full'>Login</x-button>
+                </div>
             </form>
             <div class='flex flex-row items-center'>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 m-1" fill="none" viewBox="0 0 24 24"
