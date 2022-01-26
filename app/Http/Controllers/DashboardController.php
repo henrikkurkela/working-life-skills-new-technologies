@@ -11,7 +11,7 @@ class DashboardController extends Controller
     {
         try {
             $tasks = Task::where(['user_id' => auth()->id()])->get();
-            return view('dashboard', [
+            return view('home', [
                 'tasks' => $tasks ?? []
             ]);
         } catch (\Exception $error) {

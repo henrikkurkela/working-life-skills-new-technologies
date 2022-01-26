@@ -27,7 +27,7 @@ Route::post('/logout', [AuthController::class, 'logout']);
 Route::post('/register', [AuthController::class, 'register']);
 
 
-Route::get('/dashboard', [DashboardController::class, 'getDashboard'])->middleware('auth');
+Route::get('/home', [DashboardController::class, 'getDashboard'])->middleware('auth');
 
 Route::post('/tasks', [TasksController::class, 'create'])->middleware('auth');
 Route::delete('/tasks/{id}', [TasksController::class, 'delete'])->middleware('auth');

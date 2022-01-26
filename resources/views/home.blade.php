@@ -4,12 +4,9 @@
     </x-slot>
 
     <div class='container bg-slate-500 p-4 shadow-xl rounded mt-16 mx-auto flex flex-col gap-4'>
-        <p class='text-3xl font-bold text-center'>
-            Welcome {{ Auth::user()->name }}
-        </p>
         <form method='POST' action='/tasks'>
             <div class='flex flex-col gap-4 mb-4'>
-                <p class='text-3xl font-bold text-center text-slate-900'>New Task</p>
+                <p class='text-3xl font-bold text-center text-slate-900'>{{ Auth::user()->name }}'s Todo List</p>
                 <x-error-message />
                 {{ csrf_field() }}
                 <x-input type='text' label='Task' name='task' autocomplete='off' />

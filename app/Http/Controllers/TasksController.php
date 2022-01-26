@@ -19,9 +19,9 @@ class TasksController extends Controller
                 'task' => $request->task,
                 'user_id' => auth()->id()
             ]);
-            return redirect('dashboard');
+            return redirect('home');
         } catch (\Exception $error) {
-            return redirect('dashboard')->withErrors($error->getMessage());
+            return redirect('home')->withErrors($error->getMessage());
         }
     }
 
@@ -33,9 +33,9 @@ class TasksController extends Controller
                 'user_id' => auth()->id()
             ])->firstOrFail();
             $task->delete();
-            return redirect('dashboard');
+            return redirect('home');
         } catch (\Exception $error) {
-            return redirect('dashboard')->withErrors($error->getMessage());
+            return redirect('home')->withErrors($error->getMessage());
         }
     }
 }

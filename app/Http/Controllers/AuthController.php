@@ -22,7 +22,7 @@ class AuthController extends Controller
             'password' => $request->password
         ])) {
             $request->session()->regenerate();
-            return redirect()->intended('dashboard');
+            return redirect()->intended('home');
         } else {
             return redirect()->back()->with('error', 'Unable to log in, check credentials.');
         }
