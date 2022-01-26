@@ -17,5 +17,6 @@ mix.js('resources/js/app.js', 'public/js')
     ])
     .browserSync({
         proxy: 'localhost',
+        open: false,
         notify: false
     });
