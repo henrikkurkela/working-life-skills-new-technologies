@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TasksController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,8 +22,12 @@ Route::get('/', function () {
 
 Route::view('/login', 'login')->name('login');
 Route::view('/register', 'register');
-Route::view('/dashboard', 'dashboard')->middleware('auth');
-
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 Route::post('/register', [AuthController::class, 'register']);
+
+
+Route::get('/dashboard', [DashboardController::class, 'getDashboard'])->middleware('auth');
+
+Route::post('/tasks', [TasksController::class, 'create'])->middleware('auth');
+Route::delete('/tasks/{id}', [TasksController::class, 'delete'])->middleware('auth');
