@@ -19,10 +19,24 @@
                 </div>
             </div>
         </form>
-        <div class='flex flex-col gap-4'>
-            @foreach ($tasks as $task)
-            <x-task task='{{ $task->task }}' id='{{ $task->id }}' />
-            @endforeach
+        <div>
+            <p class='text-md text-slate-900'>Unfinished tasks</p>
+            <div class='flex flex-col gap-4'>
+                @foreach ($tasks as $task)
+                    <x-task task='{{ $task->task }}' id='{{ $task->id }}' />
+                @endforeach
+            </div>
         </div>
     </div>
 </x-layout>
+
+<script>
+    window.onload = () => {
+        const inputs = document.getElementsByTagName('input');
+        for (i = 0; i < inputs.length; i++) {
+            if (inputs[i].name === 'task') {
+                inputs[i].focus();
+            }
+        }
+    }
+</script>

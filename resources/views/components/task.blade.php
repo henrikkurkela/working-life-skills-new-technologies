@@ -6,11 +6,12 @@
     .hover-text:hover:after {
         content: 'Done'
     }
+
 </style>
 
 <div class='w-full rounded bg-slate-300'>
     <div class='flex flex-row justify-between content-center items-center gap-4 pl-4'>
-        <p class='w-full'>
+        <p class='w-full text-md p-3'>
             {{ $task }}
         </p>
         <form class='self-stretch' method='POST' action='/tasks/{{ $id }}'>
