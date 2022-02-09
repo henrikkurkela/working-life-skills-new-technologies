@@ -19,21 +19,36 @@
                 </div>
             </div>
         </form>
-        <div>
-            <p class='text-md text-slate-900'>Unfinished tasks</p>
-            <div class='flex flex-col gap-4'>
-                @if (count($tasks) > 0)
-                    @foreach ($tasks as $task)
-                        <x-task :task='$task->task' :id='$task->id' />
-                    @endforeach
-                @else
-                    <p class='w-full bg-slate-300 text-center text-md p-3'>
-                        No tasks unfinished!
-                    </p>
-                @endif
+        @if (session()->get('mode', 'table') == 'table')
+            <x-task-table :tasks='$tasks' />
+            <div>
+                <form method='GET' action='/home'>
+                    <input hidden name='mode' value='cards' />
+                    <x-button type='submit' color='teal' class='w-full'>Cards</x-button>
+                </form>
             </div>
-        </div>
-        <x-task-table :tasks='$tasks' />
+        @else
+            <div>
+                <p class='text-md text-slate-900'>Unfinished tasks</p>
+                <div class='flex flex-col gap-4'>
+                    @if (count($tasks) > 0)
+                        @foreach ($tasks as $task)
+                            <x-task :task='$task->task' :id='$task->id' />
+                        @endforeach
+                    @else
+                        <p class='w-full bg-slate-300 text-center text-md p-3 rounded shadow-xl'>
+                            No tasks unfinished!
+                        </p>
+                    @endif
+                </div>
+            </div>
+            <div>
+                <form method='GET' action='/home'>
+                    <input hidden name='mode' value='table' />
+                    <x-button type='submit' color='teal' class='w-full'>Table</x-button>
+                </form>
+            </div>
+        @endif
     </div>
 </x-layout>
 
